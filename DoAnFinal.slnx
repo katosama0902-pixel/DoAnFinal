@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path="README.md" />
+  </Folder>
+  <Project Path="BLL/BLL.csproj" Id="7494890a-3bfb-407c-8d2c-52a9c8571bcd" />
+  <Project Path="DAL/DAL.csproj" Id="a6194dd5-0c95-49ac-aa64-882e39d13d1a" />
+  <Project Path="GUI/GUI.csproj" Id="14147ae0-6006-4714-8322-753f71ec35db" />
+</Solution>
