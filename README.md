@@ -47,3 +47,48 @@ Phần mềm quản lý rạp chiếu phim được xây dựng bằng **C# WinF
 Clone dự án về máy của bạn:
 ```bash
 git clone [https://github.com/username-cua-ban/Ten-Project.git](https://github.com/username-cua-ban/Ten-Project.git)
+
+Bước 2: Cài đặt Cơ sở dữ liệu
+Mở SQL Server Management Studio (SSMS).
+
+Tạo một database mới tên là: movie_db_v2 (Hoặc tên tùy ý).
+
+Mở file database_script.sql (nằm trong thư mục gốc của project) và chạy (Execute) để tạo bảng và dữ liệu mẫu.
+
+Bước 3: Cấu hình kết nối (Quan trọng)
+Mở Project bằng Visual Studio (Khuyên dùng VS 2019 hoặc 2022).
+
+Tìm file App.config ở thư mục gốc (hoặc trong project GUI và DAL).
+
+Tìm thẻ <connectionStrings>.
+
+Sửa lại phần data source thành tên Server của bạn.
+Lưu ý: Thay TEN_MAY_CUA_BAN\SQLEXPRESS bằng Server Name trong SQL của bạn.
+
+Bước 4: Chạy dự án
+Nhấn F5 hoặc nút Start trong Visual Studio để chạy chương trình.
+
+Project sẽ tự động Build và mở Form Đăng nhập.
+
+👤 Tài Khoản Mặc Định (Default Accounts)
+Bạn có thể sử dụng các tài khoản có sẵn trong DB script để đăng nhập:
+
+Vai Trò,Username,Password
+Admin,admin,admin123
+Staff,staff,staff123
+Staff,staff2,123
+
+📂 Cấu Trúc Dự Án (Project Structure)
+GUI (Graphical User Interface): Chứa các Form giao diện và logic hiển thị.
+
+BLL (Business Logic Layer): Xử lý nghiệp vụ, tính toán, kiểm tra dữ liệu trước khi đẩy xuống DAL.
+
+DAL (Data Access Layer): Chứa Entity Framework Model, tương tác trực tiếp với SQL Server.
+
+DTO/Helper: Các lớp hỗ trợ (Mã hóa, Biến toàn cục Session...).
+
+📸 Hình Ảnh Demo (Screenshots)
+(Bạn có thể thêm ảnh chụp màn hình Dashboard hoặc Giao diện bán vé vào đây sau)
+
+🤝 Đóng Góp
+Mọi đóng góp đều được hoan nghênh. Vui lòng mở Pull Request hoặc tạo Issue nếu bạn tìm thấy lỗi.
