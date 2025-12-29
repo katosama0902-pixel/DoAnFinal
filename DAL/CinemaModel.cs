@@ -1,3 +1,4 @@
+using DoAnFinal.DAL;
 using System;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
@@ -16,6 +17,9 @@ namespace DAL
         public virtual DbSet<movie> movies { get; set; }
         public virtual DbSet<ticket> tickets { get; set; }
         public virtual DbSet<user> users { get; set; }
+        // Thêm vào trong class CinemaModel : DbContext
+        public virtual DbSet<product> products { get; set; }
+        public virtual DbSet<food_bill> food_bills { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -65,6 +69,8 @@ namespace DAL
                 .WithRequired(e => e.user)
                 .HasForeignKey(e => e.staff_id)
                 .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<food_bill>().ToTable("food_bills");
         }
     }
 }

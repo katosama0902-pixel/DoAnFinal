@@ -1,4 +1,6 @@
-﻿using DoAnFinal.BLL; // Gọi lớp BLL với namespace mới
+﻿using DoAnFinal.BLL;
+using DoAnFinal.DAL; // Để dùng class user
+using DoAnFinal.Helper; // Để dùng Session
 using System;
 using System.Windows.Forms;
 
@@ -18,32 +20,24 @@ namespace DoAnFinal.GUI
             string username = txtUsername.Text.Trim();
             string password = txtPassword.Text.Trim();
 
-            // Gọi hàm Login từ lớp BLL
             var user = userBLL.Login(username, password);
 
             if (user != null)
             {
                 // Lưu user vào Session
-                DoAnFinal.Helper.Session.CurrentUser = user;
+                Session.CurrentUser = user;
 
-                MessageBox.Show("Đăng nhập thành công! Xin chào " + user.role, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Đăng nhập thành công! Vai trò: " + user.role, "Thông báo");
 
-                // Sau này khi có FrmMainAdmin/FrmMainStaff thì mở comment này ra
-
-                // Trong FrmLogin.cs -> btnLogin_Click
                 if (user.role == "Admin")
                 {
-                    MessageBox.Show("Chào Admin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    new FrmMainAdmin().Show(); // Mở form Main Admin
-                    this.Hide();               // Ẩn form Login
+                    new FrmMainAdmin().Show();
                 }
                 else if (user.role == "Staff")
                 {
-                    MessageBox.Show("Hello Staff!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     new FrmMainStaff().Show();
-                    this.Hide();
                 }
-
+                this.Hide();
             }
             else
             {
@@ -51,11 +45,13 @@ namespace DoAnFinal.GUI
             }
         }
 
-        private void chkShowPass_CheckedChanged(object sender, EventArgs e)
+        // --- SỰ KIỆN QUÊN MẬT KHẨU ---
+        private void lnkForgotPass_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            // Hiện/Ẩn mật khẩu
-            txtPassword.PasswordChar = chkShowPass.Checked ? '\0' : '*';
+            FrmRecovery frm = new FrmRecovery();
+            frm.ShowDialog();
         }
+        // ------------------------------------
 
         private void btnExit_Click(object sender, EventArgs e)
         {

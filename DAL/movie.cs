@@ -34,5 +34,8 @@ namespace DAL
         public DateTime? created_at { get; set; }
 
         public DateTime? updated_at { get; set; }
+
+        public Nullable<int> price_vip { get; set; }
+
     }
 }

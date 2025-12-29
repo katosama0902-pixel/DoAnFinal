@@ -69,5 +69,21 @@ namespace DoAnFinal.BLL
         {
             return userDAL.GetUserById(id);
         }
+
+        public user GetUserByEmail(string email)
+        {
+            return userDAL.GetUserByEmail(email);
+        }
+
+        // Hàm cập nhật mật khẩu (dùng lại hàm UpdateUser cũ hoặc viết mới cho gọn)
+        public void ResetPassword(int userId, string newPass)
+        {
+            var u = userDAL.GetUserById(userId);
+            if (u != null)
+            {
+                u.password = DoAnFinal.HashHelper.HashPassword(newPass);
+                userDAL.UpdateUser(u);
+            }
+        }
     }
 }

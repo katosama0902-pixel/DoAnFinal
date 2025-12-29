@@ -63,6 +63,12 @@
     <Compile Include="FrmChangePassword.Designer.cs">
       <DependentUpon>FrmChangePassword.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmCheckTicket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCheckTicket.Designer.cs">
+      <DependentUpon>FrmCheckTicket.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmCustomerAddEdit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +86,18 @@
     </Compile>
     <Compile Include="FrmDashboard.Designer.cs">
       <DependentUpon>FrmDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmFood.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmFood.Designer.cs">
+      <DependentUpon>FrmFood.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLeaderboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLeaderboard.Designer.cs">
+      <DependentUpon>FrmLeaderboard.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmLogin.cs">
       <SubType>Form</SubType>
@@ -111,6 +129,12 @@
     <Compile Include="FrmMovieManager.Designer.cs">
       <DependentUpon>FrmMovieManager.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmRecovery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRecovery.Designer.cs">
+      <DependentUpon>FrmRecovery.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmSellTicket.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,6 +155,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmFood.resx">
+      <DependentUpon>FrmFood.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMainAdmin.resx">
+      <DependentUpon>FrmMainAdmin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

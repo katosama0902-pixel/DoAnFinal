@@ -18,11 +18,12 @@
         private void InitializeComponent()
         {
             this.panelMenu = new System.Windows.Forms.Panel();
-            this.btnSellTicket = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnCustomers = new System.Windows.Forms.Button();
             this.btnStaff = new System.Windows.Forms.Button();
+            this.btnSellTicket = new System.Windows.Forms.Button();
             this.btnMovie = new System.Windows.Forms.Button();
+            this.btnLeaderboard = new System.Windows.Forms.Button();
             this.btnDashboard = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -42,6 +43,7 @@
             this.panelMenu.Controls.Add(this.btnStaff);
             this.panelMenu.Controls.Add(this.btnSellTicket);
             this.panelMenu.Controls.Add(this.btnMovie);
+            this.panelMenu.Controls.Add(this.btnLeaderboard);
             this.panelMenu.Controls.Add(this.btnDashboard);
             this.panelMenu.Controls.Add(this.panelLogo);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
@@ -49,23 +51,6 @@
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(220, 581);
             this.panelMenu.TabIndex = 0;
-            // 
-            // btnSellTicket (Nút Bán vé mới thêm)
-            // 
-            this.btnSellTicket.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnSellTicket.FlatAppearance.BorderSize = 0;
-            this.btnSellTicket.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSellTicket.Font = new System.Drawing.Font("Arial", 10F);
-            this.btnSellTicket.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnSellTicket.Location = new System.Drawing.Point(0, 200);
-            this.btnSellTicket.Name = "btnSellTicket";
-            this.btnSellTicket.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.btnSellTicket.Size = new System.Drawing.Size(220, 60);
-            this.btnSellTicket.TabIndex = 6;
-            this.btnSellTicket.Text = "Bán vé";
-            this.btnSellTicket.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSellTicket.UseVisualStyleBackColor = true;
-            this.btnSellTicket.Click += new System.EventHandler(this.btnSellTicket_Click);
             // 
             // btnLogout
             // 
@@ -78,7 +63,7 @@
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.btnLogout.Size = new System.Drawing.Size(220, 60);
-            this.btnLogout.TabIndex = 5;
+            this.btnLogout.TabIndex = 8;
             this.btnLogout.Text = "Đăng xuất";
             this.btnLogout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLogout.UseVisualStyleBackColor = true;
@@ -91,11 +76,11 @@
             this.btnCustomers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCustomers.Font = new System.Drawing.Font("Arial", 10F);
             this.btnCustomers.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnCustomers.Location = new System.Drawing.Point(0, 320);
+            this.btnCustomers.Location = new System.Drawing.Point(0, 380);
             this.btnCustomers.Name = "btnCustomers";
             this.btnCustomers.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.btnCustomers.Size = new System.Drawing.Size(220, 60);
-            this.btnCustomers.TabIndex = 4;
+            this.btnCustomers.TabIndex = 7;
             this.btnCustomers.Text = "Khách hàng";
             this.btnCustomers.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCustomers.UseVisualStyleBackColor = true;
@@ -108,15 +93,32 @@
             this.btnStaff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnStaff.Font = new System.Drawing.Font("Arial", 10F);
             this.btnStaff.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnStaff.Location = new System.Drawing.Point(0, 260);
+            this.btnStaff.Location = new System.Drawing.Point(0, 320);
             this.btnStaff.Name = "btnStaff";
             this.btnStaff.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.btnStaff.Size = new System.Drawing.Size(220, 60);
-            this.btnStaff.TabIndex = 3;
+            this.btnStaff.TabIndex = 6;
             this.btnStaff.Text = "Nhân viên";
             this.btnStaff.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnStaff.UseVisualStyleBackColor = true;
             this.btnStaff.Click += new System.EventHandler(this.btnStaff_Click);
+            // 
+            // btnSellTicket
+            // 
+            this.btnSellTicket.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnSellTicket.FlatAppearance.BorderSize = 0;
+            this.btnSellTicket.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSellTicket.Font = new System.Drawing.Font("Arial", 10F);
+            this.btnSellTicket.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnSellTicket.Location = new System.Drawing.Point(0, 260);
+            this.btnSellTicket.Name = "btnSellTicket";
+            this.btnSellTicket.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btnSellTicket.Size = new System.Drawing.Size(220, 60);
+            this.btnSellTicket.TabIndex = 5;
+            this.btnSellTicket.Text = "Bán vé (POS)";
+            this.btnSellTicket.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSellTicket.UseVisualStyleBackColor = true;
+            this.btnSellTicket.Click += new System.EventHandler(this.btnSellTicket_Click);
             // 
             // btnMovie
             // 
@@ -125,15 +127,32 @@
             this.btnMovie.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMovie.Font = new System.Drawing.Font("Arial", 10F);
             this.btnMovie.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnMovie.Location = new System.Drawing.Point(0, 140);
+            this.btnMovie.Location = new System.Drawing.Point(0, 200);
             this.btnMovie.Name = "btnMovie";
             this.btnMovie.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.btnMovie.Size = new System.Drawing.Size(220, 60);
-            this.btnMovie.TabIndex = 2;
+            this.btnMovie.TabIndex = 4;
             this.btnMovie.Text = "Phim";
             this.btnMovie.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMovie.UseVisualStyleBackColor = true;
             this.btnMovie.Click += new System.EventHandler(this.btnMovie_Click);
+            // 
+            // btnLeaderboard
+            // 
+            this.btnLeaderboard.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnLeaderboard.FlatAppearance.BorderSize = 0;
+            this.btnLeaderboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLeaderboard.Font = new System.Drawing.Font("Arial", 10F);
+            this.btnLeaderboard.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnLeaderboard.Location = new System.Drawing.Point(0, 140);
+            this.btnLeaderboard.Name = "btnLeaderboard";
+            this.btnLeaderboard.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btnLeaderboard.Size = new System.Drawing.Size(220, 60);
+            this.btnLeaderboard.TabIndex = 3;
+            this.btnLeaderboard.Text = "BXH Doanh thu";
+            this.btnLeaderboard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLeaderboard.UseVisualStyleBackColor = true;
+            this.btnLeaderboard.Click += new System.EventHandler(this.btnLeaderboard_Click);
             // 
             // btnDashboard
             // 
@@ -169,7 +188,7 @@
             this.label1.ForeColor = System.Drawing.Color.LightGray;
             this.label1.Location = new System.Drawing.Point(35, 30);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(130, 24);
+            this.label1.Size = new System.Drawing.Size(137, 24);
             this.label1.TabIndex = 0;
             this.label1.Text = "CINEMA MGT";
             // 
@@ -191,7 +210,7 @@
             this.lblTitle.ForeColor = System.Drawing.Color.White;
             this.lblTitle.Location = new System.Drawing.Point(300, 25);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(99, 32);
+            this.lblTitle.Size = new System.Drawing.Size(94, 32);
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "HOME";
             // 
@@ -232,7 +251,8 @@
         private System.Windows.Forms.Button btnCustomers;
         private System.Windows.Forms.Button btnStaff;
         private System.Windows.Forms.Button btnMovie;
-        private System.Windows.Forms.Button btnSellTicket; // Đã thêm nút bán vé
+        private System.Windows.Forms.Button btnSellTicket;
+        private System.Windows.Forms.Button btnLeaderboard; // Khai báo nút mới
         private System.Windows.Forms.Panel panelTitleBar;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Label label1;

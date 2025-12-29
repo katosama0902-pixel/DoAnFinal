@@ -105,6 +105,14 @@ namespace DoAnFinal.GUI
             lblTitle.Text = "THỐNG KÊ DOANH THU";
         }
 
+        // --- [MỚI] SỰ KIỆN NÚT ĐUA TOP ---
+        private void btnLeaderboard_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FrmLeaderboard(), sender);
+            lblTitle.Text = "BẢNG XẾP HẠNG DOANH SỐ";
+        }
+        // ---------------------------------
+
         private void btnMovie_Click(object sender, EventArgs e)
         {
             OpenChildForm(new FrmMovieManager(), sender);
@@ -161,7 +169,7 @@ namespace DoAnFinal.GUI
             "#0E3441", // Xanh đen
             "#00B0AD", // Xanh lơ
             "#721D47", // Đỏ rượu
-            "#EA4833", // Đỏ cam
+            "#EA676C", // Đỏ cam
             "#EF937E", // Hồng phấn
             "#F37521", // Cam cháy
             "#A12059", // Tím hồng

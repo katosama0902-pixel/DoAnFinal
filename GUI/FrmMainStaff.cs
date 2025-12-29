@@ -22,7 +22,7 @@ namespace DoAnFinal.GUI
                 {
                     DisableButton();
                     currentButton = (Button)btnSender;
-                    Color color = Color.FromArgb(255, 87, 34);
+                    Color color = Color.FromArgb(255, 87, 34); // Màu cam chủ đạo của Staff
                     currentButton.BackColor = color;
                     currentButton.ForeColor = Color.White;
                     currentButton.Font = new System.Drawing.Font("Arial", 11.5F, System.Drawing.FontStyle.Bold);
@@ -94,15 +94,20 @@ namespace DoAnFinal.GUI
             lblTitle.Text = "QUẦY BÁN VÉ";
         }
 
-        // --- SỰ KIỆN ĐỔI MẬT KHẨU (MỚI THÊM) ---
+        // --- [MỚI] SỰ KIỆN NÚT TRA CỨU VÉ ---
+        private void btnCheckTicket_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FrmCheckTicket(), sender);
+            lblTitle.Text = "TRA CỨU & IN VÉ";
+        }
+        // -------------------------------------
+
         private void btnChangePass_Click(object sender, EventArgs e)
         {
             // Mở form dưới dạng Dialog (popup)
             FrmChangePassword frm = new FrmChangePassword();
             frm.ShowDialog();
-            // Không cần ActivateButton vì đây là popup
         }
-        // ----------------------------------------
 
         private void btnLogout_Click(object sender, EventArgs e)
         {

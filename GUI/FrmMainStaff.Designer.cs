@@ -16,7 +16,8 @@
         {
             this.panelMenu = new System.Windows.Forms.Panel();
             this.btnLogout = new System.Windows.Forms.Button();
-            this.btnChangePass = new System.Windows.Forms.Button(); // Mới thêm
+            this.btnChangePass = new System.Windows.Forms.Button();
+            this.btnCheckTicket = new System.Windows.Forms.Button(); // [MỚI] Khởi tạo nút
             this.btnSellTicket = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -32,7 +33,8 @@
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(80)))));
             this.panelMenu.Controls.Add(this.btnLogout);
-            this.panelMenu.Controls.Add(this.btnChangePass); // Thêm nút Đổi MK vào đây
+            this.panelMenu.Controls.Add(this.btnChangePass);
+            this.panelMenu.Controls.Add(this.btnCheckTicket); // [MỚI] Thêm vào danh sách Controls
             this.panelMenu.Controls.Add(this.btnSellTicket);
             this.panelMenu.Controls.Add(this.panelLogo);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
@@ -58,22 +60,39 @@
             this.btnLogout.UseVisualStyleBackColor = true;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
-            // btnChangePass (Nút Mới)
+            // btnChangePass
             // 
             this.btnChangePass.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnChangePass.FlatAppearance.BorderSize = 0;
             this.btnChangePass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnChangePass.Font = new System.Drawing.Font("Arial", 10F);
             this.btnChangePass.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnChangePass.Location = new System.Drawing.Point(0, 140);
+            this.btnChangePass.Location = new System.Drawing.Point(0, 200);
             this.btnChangePass.Name = "btnChangePass";
             this.btnChangePass.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.btnChangePass.Size = new System.Drawing.Size(220, 60);
-            this.btnChangePass.TabIndex = 2;
+            this.btnChangePass.TabIndex = 3;
             this.btnChangePass.Text = "Đổi mật khẩu";
             this.btnChangePass.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnChangePass.UseVisualStyleBackColor = true;
             this.btnChangePass.Click += new System.EventHandler(this.btnChangePass_Click);
+            // 
+            // btnCheckTicket (Cấu hình nút Mới)
+            // 
+            this.btnCheckTicket.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnCheckTicket.FlatAppearance.BorderSize = 0;
+            this.btnCheckTicket.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCheckTicket.Font = new System.Drawing.Font("Arial", 10F);
+            this.btnCheckTicket.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnCheckTicket.Location = new System.Drawing.Point(0, 140);
+            this.btnCheckTicket.Name = "btnCheckTicket";
+            this.btnCheckTicket.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btnCheckTicket.Size = new System.Drawing.Size(220, 60);
+            this.btnCheckTicket.TabIndex = 2;
+            this.btnCheckTicket.Text = "Tra cứu & In vé";
+            this.btnCheckTicket.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCheckTicket.UseVisualStyleBackColor = true;
+            this.btnCheckTicket.Click += new System.EventHandler(this.btnCheckTicket_Click);
             // 
             // btnSellTicket
             // 
@@ -168,7 +187,8 @@
         private System.Windows.Forms.Panel panelLogo;
         private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.Button btnSellTicket;
-        private System.Windows.Forms.Button btnChangePass; // Khai báo nút mới
+        private System.Windows.Forms.Button btnCheckTicket; // [MỚI] Khai báo biến
+        private System.Windows.Forms.Button btnChangePass;
         private System.Windows.Forms.Panel panelTitleBar;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Label label1;
