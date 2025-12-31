@@ -57,6 +57,36 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Client\FrmCustomerBooking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Client\FrmCustomerBooking.Designer.cs">
+      <DependentUpon>FrmCustomerBooking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Client\FrmCustomerHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Client\FrmCustomerHome.Designer.cs">
+      <DependentUpon>FrmCustomerHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Client\FrmLoginCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Client\FrmLoginCustomer.Designer.cs">
+      <DependentUpon>FrmLoginCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Client\FrmRegisterCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Client\FrmRegisterCustomer.Designer.cs">
+      <DependentUpon>FrmRegisterCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Client\FrmTransactionHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Client\FrmTransactionHistory.Designer.cs">
+      <DependentUpon>FrmTransactionHistory.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmChangePassword.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -152,6 +182,12 @@
     </Compile>
     <Compile Include="FrmStaffManager.Designer.cs">
       <DependentUpon>FrmStaffManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmStartup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmStartup.Designer.cs">
+      <DependentUpon>FrmStartup.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

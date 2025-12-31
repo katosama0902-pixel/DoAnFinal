@@ -86,5 +86,38 @@ namespace DoAnFinal.BLL
                 return false; // Không tìm thấy vé (hoặc lỗi)
             }
         }
+
+        public bool ResellTicket(int ticketId, int customerId)
+        {
+            using (var db = new CinemaModel())
+            {
+                // 1. Tìm vé
+                var ticket = db.tickets.Find(ticketId);
+                if (ticket == null) return false;
+
+                // 2. Kiểm tra quy tắc: Không được bán lại vé của quá khứ
+                // (Cần join bảng Lịch chiếu/Phim để lấy giờ chiếu, ở đây mình giả định check ngày tạo cho đơn giản
+                // hoặc bạn có thể mở rộng check show_time nếu DB có liên kết)
+                // Tạm thời cho phép bán mọi vé chưa dùng.
+
+                // 3. Tính toán tiền hoàn lại (90% giá gốc)
+                decimal originalPrice = (decimal)ticket.price;
+                decimal refundAmount = originalPrice * 0.9m; // Giữ lại 90%
+
+                // 4. Cộng tiền này vào ĐIỂM (Points) của khách hàng
+                // (Giả sử 1 điểm = 1 VND để đơn giản, hoặc quy đổi tùy bạn)
+                var customer = db.customers.Find(customerId);
+                if (customer != null)
+                {
+                    customer.points = (customer.points ?? 0) + (int)refundAmount;
+                }
+
+                // 5. Xóa vé (Để ghế trống cho người khác mua)
+                db.tickets.Remove(ticket);
+
+                db.SaveChanges();
+                return true;
+            }
+        }
     }
 }
