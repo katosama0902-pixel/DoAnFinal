@@ -24,10 +24,11 @@
             this.btnLogin = new System.Windows.Forms.Button();
             this.btnRegister = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
+            this.lnkForgotPass = new System.Windows.Forms.LinkLabel(); // [MỚI] Khai báo
             this.panelLeft.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panelLeft (Trang trí bên trái)
+            // panelLeft
             // 
             this.panelLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
             this.panelLeft.Controls.Add(this.label1);
@@ -95,6 +96,19 @@
             this.txtPassword.Size = new System.Drawing.Size(300, 30);
             this.txtPassword.TabIndex = 5;
             // 
+            // lnkForgotPass ([MỚI] Cấu hình LinkLabel)
+            // 
+            this.lnkForgotPass.AutoSize = true;
+            this.lnkForgotPass.Font = new System.Drawing.Font("Arial", 9F);
+            this.lnkForgotPass.LinkColor = System.Drawing.Color.DimGray;
+            this.lnkForgotPass.Location = new System.Drawing.Point(535, 225); // Canh phải, dưới ô pass
+            this.lnkForgotPass.Name = "lnkForgotPass";
+            this.lnkForgotPass.Size = new System.Drawing.Size(113, 17);
+            this.lnkForgotPass.TabIndex = 9;
+            this.lnkForgotPass.TabStop = true;
+            this.lnkForgotPass.Text = "Quên mật khẩu?";
+            this.lnkForgotPass.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkForgotPass_LinkClicked);
+            // 
             // btnLogin
             // 
             this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
@@ -142,6 +156,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(700, 450);
+            this.Controls.Add(this.lnkForgotPass); // [MỚI] Thêm vào form
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.btnLogin);
@@ -173,5 +188,6 @@
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Button btnRegister;
         private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.LinkLabel lnkForgotPass; // [MỚI]
     }
 }

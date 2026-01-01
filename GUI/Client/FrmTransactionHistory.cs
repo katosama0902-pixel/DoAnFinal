@@ -34,8 +34,8 @@ namespace DoAnFinal.GUI.CustomerArea
                                  orderby t.created_at descending
                                  select new
                                  {
-                                     MaVe = t.id,          // [FIX 1] Đổi ticket_id -> id
-                                     Phim = m.movie_name,  // [FIX 2] Lấy tên phim từ bảng m (Movies)
+                                     MaVe = t.id,          
+                                     Phim = m.movie_name,  
                                      Ghe = t.seat_number,
                                      GiaVe = t.price,
                                      NgayDat = t.created_at

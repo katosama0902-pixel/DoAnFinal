@@ -1,6 +1,6 @@
 ﻿using DoAnFinal.BLL;
-using DoAnFinal.DAL; // Để dùng class user
-using DoAnFinal.Helper; // Để dùng Session
+using DoAnFinal.DAL;
+using DoAnFinal.Helper;
 using System;
 using System.Windows.Forms;
 
@@ -29,15 +29,9 @@ namespace DoAnFinal.GUI
 
                 MessageBox.Show("Đăng nhập thành công! Vai trò: " + user.role, "Thông báo");
 
-                if (user.role == "Admin")
-                {
-                    new FrmMainAdmin().Show();
-                }
-                else if (user.role == "Staff")
-                {
-                    new FrmMainStaff().Show();
-                }
-                this.Hide();
+                // [FIX QUAN TRỌNG] Thay vì mở form Main ở đây, ta chỉ báo kết quả OK
+                this.DialogResult = DialogResult.OK;
+                this.Close(); // Đóng form Login lại để FrmStartup xử lý tiếp
             }
             else
             {
@@ -45,17 +39,18 @@ namespace DoAnFinal.GUI
             }
         }
 
-        // --- SỰ KIỆN QUÊN MẬT KHẨU ---
         private void lnkForgotPass_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             FrmRecovery frm = new FrmRecovery();
             frm.ShowDialog();
         }
-        // ------------------------------------
 
+        // Nút Quay lại / Thoát
         private void btnExit_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            // [FIX] Báo Cancel để FrmStartup biết là người dùng không muốn đăng nhập nữa
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
         }
     }
 }

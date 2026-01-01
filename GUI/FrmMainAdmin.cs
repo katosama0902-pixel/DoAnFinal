@@ -140,9 +140,7 @@ namespace DoAnFinal.GUI
         private void btnLogout_Click(object sender, EventArgs e)
         {
             // Reset lại màu khi đăng xuất
-            DisableButton();
-            new FrmLogin().Show();
-            this.Hide();
+            this.Close();
         }
     }
 

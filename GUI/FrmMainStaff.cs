@@ -111,9 +111,7 @@ namespace DoAnFinal.GUI
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
-            DisableButton();
-            new FrmLogin().Show();
-            this.Hide();
+            this.Close();
         }
     }
 }
