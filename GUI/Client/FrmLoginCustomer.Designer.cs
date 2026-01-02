@@ -24,7 +24,8 @@
             this.btnLogin = new System.Windows.Forms.Button();
             this.btnRegister = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
-            this.lnkForgotPass = new System.Windows.Forms.LinkLabel(); // [MỚI] Khai báo
+            this.lnkForgotPass = new System.Windows.Forms.LinkLabel();
+            this.btnGuest = new System.Windows.Forms.Button(); // [MỚI] Khai báo nút Khách
             this.panelLeft.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,7 +56,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label2.Location = new System.Drawing.Point(340, 40);
+            this.label2.Location = new System.Drawing.Point(340, 30);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(184, 32);
             this.label2.TabIndex = 1;
@@ -64,7 +65,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(345, 100);
+            this.label3.Location = new System.Drawing.Point(345, 80);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(95, 17);
             this.label3.TabIndex = 2;
@@ -73,7 +74,7 @@
             // txtPhone
             // 
             this.txtPhone.Font = new System.Drawing.Font("Arial", 12F);
-            this.txtPhone.Location = new System.Drawing.Point(348, 120);
+            this.txtPhone.Location = new System.Drawing.Point(348, 100);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(300, 30);
             this.txtPhone.TabIndex = 3;
@@ -81,7 +82,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(345, 170);
+            this.label4.Location = new System.Drawing.Point(345, 150);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(70, 17);
             this.label4.TabIndex = 4;
@@ -90,24 +91,11 @@
             // txtPassword
             // 
             this.txtPassword.Font = new System.Drawing.Font("Arial", 12F);
-            this.txtPassword.Location = new System.Drawing.Point(348, 190);
+            this.txtPassword.Location = new System.Drawing.Point(348, 170);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '•';
             this.txtPassword.Size = new System.Drawing.Size(300, 30);
             this.txtPassword.TabIndex = 5;
-            // 
-            // lnkForgotPass ([MỚI] Cấu hình LinkLabel)
-            // 
-            this.lnkForgotPass.AutoSize = true;
-            this.lnkForgotPass.Font = new System.Drawing.Font("Arial", 9F);
-            this.lnkForgotPass.LinkColor = System.Drawing.Color.DimGray;
-            this.lnkForgotPass.Location = new System.Drawing.Point(535, 225); // Canh phải, dưới ô pass
-            this.lnkForgotPass.Name = "lnkForgotPass";
-            this.lnkForgotPass.Size = new System.Drawing.Size(113, 17);
-            this.lnkForgotPass.TabIndex = 9;
-            this.lnkForgotPass.TabStop = true;
-            this.lnkForgotPass.Text = "Quên mật khẩu?";
-            this.lnkForgotPass.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkForgotPass_LinkClicked);
             // 
             // btnLogin
             // 
@@ -115,7 +103,7 @@
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Bold);
             this.btnLogin.ForeColor = System.Drawing.Color.White;
-            this.btnLogin.Location = new System.Drawing.Point(348, 250);
+            this.btnLogin.Location = new System.Drawing.Point(348, 230);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(300, 45);
             this.btnLogin.TabIndex = 6;
@@ -129,13 +117,40 @@
             this.btnRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegister.Font = new System.Drawing.Font("Arial", 10F);
             this.btnRegister.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
-            this.btnRegister.Location = new System.Drawing.Point(348, 310);
+            this.btnRegister.Location = new System.Drawing.Point(348, 290);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(300, 40);
             this.btnRegister.TabIndex = 7;
             this.btnRegister.Text = "Đăng ký thành viên mới";
             this.btnRegister.UseVisualStyleBackColor = false;
             this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
+            // 
+            // btnGuest ([MỚI] Nút dành cho khách)
+            // 
+            this.btnGuest.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnGuest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuest.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Italic);
+            this.btnGuest.ForeColor = System.Drawing.Color.DimGray;
+            this.btnGuest.Location = new System.Drawing.Point(348, 345); // Nằm dưới nút Đăng ký
+            this.btnGuest.Name = "btnGuest";
+            this.btnGuest.Size = new System.Drawing.Size(300, 35);
+            this.btnGuest.TabIndex = 10;
+            this.btnGuest.Text = "Tiếp tục với vai trò Khách >>";
+            this.btnGuest.UseVisualStyleBackColor = false;
+            this.btnGuest.Click += new System.EventHandler(this.btnGuest_Click);
+            // 
+            // lnkForgotPass
+            // 
+            this.lnkForgotPass.AutoSize = true;
+            this.lnkForgotPass.Font = new System.Drawing.Font("Arial", 9F);
+            this.lnkForgotPass.LinkColor = System.Drawing.Color.DimGray;
+            this.lnkForgotPass.Location = new System.Drawing.Point(535, 205);
+            this.lnkForgotPass.Name = "lnkForgotPass";
+            this.lnkForgotPass.Size = new System.Drawing.Size(113, 17);
+            this.lnkForgotPass.TabIndex = 9;
+            this.lnkForgotPass.TabStop = true;
+            this.lnkForgotPass.Text = "Quên mật khẩu?";
+            this.lnkForgotPass.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkForgotPass_LinkClicked);
             // 
             // btnBack
             // 
@@ -156,7 +171,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(700, 450);
-            this.Controls.Add(this.lnkForgotPass); // [MỚI] Thêm vào form
+            this.Controls.Add(this.btnGuest); // [MỚI]
+            this.Controls.Add(this.lnkForgotPass);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.btnLogin);
@@ -188,6 +204,7 @@
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Button btnRegister;
         private System.Windows.Forms.Button btnBack;
-        private System.Windows.Forms.LinkLabel lnkForgotPass; // [MỚI]
+        private System.Windows.Forms.LinkLabel lnkForgotPass;
+        private System.Windows.Forms.Button btnGuest; // Khai báo nút mới
     }
 }

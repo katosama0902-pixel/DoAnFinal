@@ -15,7 +15,6 @@ namespace DoAnFinal.GUI.CustomerArea
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            // (Giữ nguyên code cũ của bạn...)
             string phone = txtPhone.Text.Trim();
             string pass = txtPassword.Text.Trim();
 
@@ -44,7 +43,40 @@ namespace DoAnFinal.GUI.CustomerArea
             }
         }
 
-        // [MỚI] Sự kiện bấm nút Quên mật khẩu
+        // [CẬP NHẬT] SỰ KIỆN NÚT KHÁCH VÃNG LAI (Fix lỗi thanh toán)
+        private void btnGuest_Click(object sender, EventArgs e)
+        {
+            customer guestCus = null;
+
+            using (var db = new CinemaModel())
+            {
+                // 1. Tìm xem trong Database đã có tài khoản "GUEST" chưa
+                // (Chúng ta dùng số điện thoại "GUEST" để nhận diện)
+                guestCus = db.customers.FirstOrDefault(c => c.phone_number == "GUEST");
+
+                // 2. Nếu chưa có thì TẠO MỚI ngay lập tức
+                if (guestCus == null)
+                {
+                    guestCus = new customer();
+                    guestCus.full_name = "Khách Vãng Lai";
+                    guestCus.phone_number = "GUEST"; // Đánh dấu đặc biệt
+                    guestCus.password = "guest123";  // Mật khẩu ngẫu nhiên
+                    guestCus.points = 0;
+
+                    db.customers.Add(guestCus);
+                    db.SaveChanges(); // Lưu vào DB để sinh ra ID thật
+                }
+            }
+
+            MessageBox.Show("Đang truy cập với tư cách Khách...\n(Một số tính năng sẽ bị hạn chế)", "Chế độ Khách", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            this.Hide();
+            // Lúc này guestCus đã có ID thật trong DB nên thanh toán sẽ thành công
+            FrmCustomerHome home = new FrmCustomerHome(guestCus);
+            home.ShowDialog();
+            this.Show();
+        }
+
         private void lnkForgotPass_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             FrmRecovery frm = new FrmRecovery();

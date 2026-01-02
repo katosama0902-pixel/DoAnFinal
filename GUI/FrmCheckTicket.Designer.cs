@@ -14,7 +14,7 @@
             this.panelFill = new System.Windows.Forms.Panel();
             this.dgvTickets = new System.Windows.Forms.DataGridView();
             this.panelBottom = new System.Windows.Forms.Panel();
-            this.btnCancelTicket = new System.Windows.Forms.Button(); // [MỚI] Nút Hủy
+            this.btnCancelTicket = new System.Windows.Forms.Button(); // Nút Hủy
             this.btnPrint = new System.Windows.Forms.Button();
             this.panelTop.SuspendLayout();
             this.panelFill.SuspendLayout();
@@ -37,48 +37,42 @@
 
             this.txtSearch.Location = new System.Drawing.Point(33, 45);
             this.txtSearch.Size = new System.Drawing.Size(300, 25);
-            this.txtSearch.Font = new System.Drawing.Font("Arial", 11F);
 
             this.btnSearch.Text = "TÌM KIẾM";
             this.btnSearch.Location = new System.Drawing.Point(350, 42);
-            this.btnSearch.Size = new System.Drawing.Size(120, 32);
+            this.btnSearch.Size = new System.Drawing.Size(120, 30);
             this.btnSearch.BackColor = System.Drawing.Color.SteelBlue;
             this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
 
             // Panel Bottom
             this.panelBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelBottom.Height = 60;
             this.panelBottom.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panelBottom.Controls.Add(this.btnCancelTicket); // Add nút Hủy
+            this.panelBottom.Controls.Add(this.btnCancelTicket);
             this.panelBottom.Controls.Add(this.btnPrint);
 
-            // [MỚI] btnCancelTicket (HỦY VÉ)
-            this.btnCancelTicket.Text = "🗑 HỦY VÉ / HOÀN TIỀN";
+            // Nút Hủy Vé
+            this.btnCancelTicket.Text = "🗑 HỦY VÉ (HOÀN TIỀN)";
             this.btnCancelTicket.Location = new System.Drawing.Point(30, 10);
-            this.btnCancelTicket.Size = new System.Drawing.Size(220, 40);
-            this.btnCancelTicket.BackColor = System.Drawing.Color.DarkRed; // Màu đỏ đậm
+            this.btnCancelTicket.Size = new System.Drawing.Size(200, 40);
+            this.btnCancelTicket.BackColor = System.Drawing.Color.Firebrick;
             this.btnCancelTicket.ForeColor = System.Drawing.Color.White;
-            this.btnCancelTicket.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelTicket.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.btnCancelTicket.Click += new System.EventHandler(this.btnCancelTicket_Click);
 
-            // btnPrint
-            this.btnPrint.Text = "🖨 IN LẠI VÉ ĐÃ CHỌN";
-            this.btnPrint.Location = new System.Drawing.Point(750, 10);
-            this.btnPrint.Size = new System.Drawing.Size(200, 40);
+            // Nút In Vé
+            this.btnPrint.Text = "🖨 IN VÉ";
+            this.btnPrint.Location = new System.Drawing.Point(800, 10);
+            this.btnPrint.Size = new System.Drawing.Size(150, 40);
             this.btnPrint.BackColor = System.Drawing.Color.SeaGreen;
             this.btnPrint.ForeColor = System.Drawing.Color.White;
-            this.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrint.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
-            this.btnPrint.Anchor = (System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right);
 
             // Grid
             this.panelFill.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelFill.Controls.Add(this.dgvTickets);
-
             this.dgvTickets.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvTickets.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvTickets.BackgroundColor = System.Drawing.Color.White;
@@ -101,8 +95,6 @@
 
         private System.Windows.Forms.Panel panelTop; private System.Windows.Forms.Label label1; private System.Windows.Forms.TextBox txtSearch; private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Panel panelFill; private System.Windows.Forms.DataGridView dgvTickets;
-        private System.Windows.Forms.Panel panelBottom;
-        private System.Windows.Forms.Button btnPrint;
-        private System.Windows.Forms.Button btnCancelTicket; // Khai báo nút mới
+        private System.Windows.Forms.Panel panelBottom; private System.Windows.Forms.Button btnPrint; private System.Windows.Forms.Button btnCancelTicket;
     }
 }

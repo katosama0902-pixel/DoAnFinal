@@ -12,6 +12,7 @@
             this.panelBottom = new System.Windows.Forms.Panel();
             this.btnConfirm = new System.Windows.Forms.Button();
             this.lblTotalFood = new System.Windows.Forms.Label();
+            this.lblGift = new System.Windows.Forms.Label(); // [MỚI] Khai báo nhãn Quà tặng
             this.dgvFood = new System.Windows.Forms.DataGridView();
             this.panelHeader.SuspendLayout();
             this.panelBottom.SuspendLayout();
@@ -19,7 +20,7 @@
             this.SuspendLayout();
 
             // Header
-            this.panelHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(152)))), ((int)(((byte)(0))))); // Màu cam
+            this.panelHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(152)))), ((int)(((byte)(0)))));
             this.panelHeader.Controls.Add(this.label1);
             this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelHeader.Size = new System.Drawing.Size(600, 60);
@@ -32,22 +33,30 @@
 
             // Bottom
             this.panelBottom.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panelBottom.Controls.Add(this.lblGift); // [MỚI] Thêm nhãn vào Panel
             this.panelBottom.Controls.Add(this.lblTotalFood);
             this.panelBottom.Controls.Add(this.btnConfirm);
             this.panelBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelBottom.Size = new System.Drawing.Size(600, 80);
+            this.panelBottom.Size = new System.Drawing.Size(600, 100); // Tăng chiều cao lên chút để chứa đủ 2 dòng
+
+            // [MỚI] Cấu hình nhãn Quà tặng
+            this.lblGift.AutoSize = true;
+            this.lblGift.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Bold); // In đậm
+            this.lblGift.ForeColor = System.Drawing.Color.Green; // Màu xanh lá cây
+            this.lblGift.Location = new System.Drawing.Point(20, 15); // Nằm trên dòng Tổng tiền
+            this.lblGift.Text = ""; // Mặc định rỗng
 
             this.lblTotalFood.AutoSize = true;
             this.lblTotalFood.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
             this.lblTotalFood.ForeColor = System.Drawing.Color.Red;
-            this.lblTotalFood.Location = new System.Drawing.Point(20, 25);
+            this.lblTotalFood.Location = new System.Drawing.Point(20, 50); // Dời xuống dưới chút
             this.lblTotalFood.Text = "Tổng: 0 VND";
 
             this.btnConfirm.BackColor = System.Drawing.Color.SeaGreen;
             this.btnConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConfirm.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.btnConfirm.ForeColor = System.Drawing.Color.White;
-            this.btnConfirm.Location = new System.Drawing.Point(400, 15);
+            this.btnConfirm.Location = new System.Drawing.Point(400, 25);
             this.btnConfirm.Size = new System.Drawing.Size(180, 50);
             this.btnConfirm.Text = "XÁC NHẬN";
             this.btnConfirm.UseVisualStyleBackColor = false;
@@ -60,9 +69,8 @@
             this.dgvFood.AllowUserToAddRows = false;
             this.dgvFood.RowTemplate.Height = 40;
             this.dgvFood.Location = new System.Drawing.Point(0, 60);
-            this.dgvFood.Size = new System.Drawing.Size(600, 360);
+            this.dgvFood.Size = new System.Drawing.Size(600, 340);
             this.dgvFood.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFood_CellValueChanged);
-            // Quan trọng: Bắt sự kiện này để commit edit ngay khi click
             this.dgvFood.CurrentCellDirtyStateChanged += new System.EventHandler(this.dgvFood_CurrentCellDirtyStateChanged);
 
             this.ClientSize = new System.Drawing.Size(600, 500);
@@ -78,7 +86,9 @@
         }
 
         private System.Windows.Forms.Panel panelHeader; private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panelBottom; private System.Windows.Forms.Button btnConfirm; private System.Windows.Forms.Label lblTotalFood;
+        private System.Windows.Forms.Panel panelBottom; private System.Windows.Forms.Button btnConfirm;
+        private System.Windows.Forms.Label lblTotalFood;
+        private System.Windows.Forms.Label lblGift; // [MỚI]
         private System.Windows.Forms.DataGridView dgvFood;
     }
 }
